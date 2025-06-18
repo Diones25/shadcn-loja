@@ -1,12 +1,16 @@
-import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export default function Home() {
   return (
     <>
-      <Button>Hello</Button>
-      <ThemeToggle />
+      <div className="w-full max-w-4xl mx-auto">
+        <Header />
+        <div className="mx-3">
+          ...
+        </div>
+        <Footer />
+      </div>
     </>
   );
 }
