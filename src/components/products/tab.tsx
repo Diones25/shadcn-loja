@@ -59,7 +59,7 @@ export const ProductsTab = async () => {
         </TabsList>
 
         {tabs.map((tab) => (
-          <TabsContent value={tab.value} className="mt-6">
+          <TabsContent key={tab.value} value={tab.value} className="mt-6">
             {tab.products.length > 0 &&
               <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
                 {tab.products.map((product) => (
