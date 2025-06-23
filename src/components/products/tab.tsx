@@ -5,10 +5,11 @@ import {
   TabsList,
   TabsTrigger
 } from "@/components/ui/tabs"
+import { getAllProducts } from "@/service/product"
 
-export const ProductsTab = () => {
+export const ProductsTab = async () => {
+  const products = await getAllProducts();
   
-
   return (
     <>
       <Tabs defaultValue="tab1">
