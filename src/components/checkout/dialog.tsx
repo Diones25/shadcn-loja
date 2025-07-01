@@ -1,20 +1,19 @@
 "use client"
 import { useState } from 'react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog'
-import { Progress } from '../ui/progress'
-import StepUser from './step-user'
-import StepAddress from './step-address'
-import StepFinish from './step-finish'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { Progress } from '@/components/ui/progress'
+import StepUser from '@/components/checkout/step-user'
+import StepAddress from '@/components/checkout/step-address'
+import StepFinish from '@/components/checkout/step-finish'
+import { CkeckoutSteps } from '@/types/checkout-steps'
 
 type Props = {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
 
-type Steps = 'user' | 'address' | 'finish'
-
 const CheckoutDialog = ({ open, onOpenChange }: Props) => {
-  const [step, setStep] = useState<Steps>('user')
+  const [step, setStep] = useState<CkeckoutSteps>('user')
   
   let progressPct = 0
   switch (step) {
