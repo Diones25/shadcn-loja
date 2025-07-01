@@ -2,11 +2,12 @@ import { useCheckoutStore } from '@/stores/checkout-store'
 import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
+import { generateMessage } from '@/lib/generate-message'
 
 const StepFinish = () => {
   const { name } = useCheckoutStore(state => state)
 
-  const message = '';
+  const message = generateMessage();
   const linkZap = `https://wa.me//${process.env.NEXT_PUBLIC_ZAP}?text=${encodeURI(message)}`;
 
   return (
